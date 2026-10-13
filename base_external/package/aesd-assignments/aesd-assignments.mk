@@ -12,7 +12,7 @@ AESD_ASSIGNMENTS_VERSION = 6296270dc574174c89083e073d0f80dcb51f787d
 AESD_ASSIGNMENTS_SITE = git@github.com:theworldofobi/aeld-assignment-3-and-later.git
 AESD_ASSIGNMENTS_SITE_METHOD = git
 AESD_ASSIGNMENTS_GIT_SUBMODULES = YES
-AESD_ASSIGNMENTS_MODULES_SUBDIR = aesd-char-driver
+AESD_ASSIGNMENTS_MODULES_SUBDIRS = aesd-char-driver
 
 define AESD_ASSIGNMENTS_BUILD_CMDS
 	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/server all
@@ -23,7 +23,7 @@ define AESD_ASSIGNMENTS_INSTALL_TARGET_CMDS
 	$(INSTALL) -m 0755 $(@D)/server/aesdsocket-start-stop $(TARGET_DIR)/etc/init.d/S99aesdsocket
 	$(INSTALL) -m 0755 $(@D)/aesd-char-driver/aesdchar_load $(TARGET_DIR)/usr/bin
 	$(INSTALL) -m 0755 $(@D)/aesd-char-driver/aesdchar_unload $(TARGET_DIR)/usr/bin
-	$(INSTALL) -m 0755 $(@D)/aesd-char-driver/aesdchar-start-stop $(TARGET_DIR)/etc/init.d/S98aesdchar
+	$(INSTALL) -m 0755 $(@D)/aesd-char-driver/aesd-char-driver-start-stop $(TARGET_DIR)/etc/init.d/S98aesdchar
 endef
 
 $(eval $(kernel-module))
